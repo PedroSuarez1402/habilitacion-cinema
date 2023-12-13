@@ -40,7 +40,7 @@ const Movie = sequelize.define('Movie', {
       isIn: [[true, false]], // Para este caso podmos usar un booleano
     },
   },
- 
+
 });
 
 module.exports = Movie;
