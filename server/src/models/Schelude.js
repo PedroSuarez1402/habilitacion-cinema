@@ -1,6 +1,3 @@
-const sequelize = require('sequelize');
-const database = require('')
-
 
 // Crear películas
 Movie.create({ title: 'Casas de Terror', description: 'Descripción de Casas de Terror', /*...otros campos...*/ });
