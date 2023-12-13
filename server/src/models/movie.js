@@ -1,6 +1,6 @@
 
 const { DataTypes } = require('sequelize');
-const sequelize = require('../db');
+const sequelize = require('../Db');
 
 const Movie = sequelize.define('Movie', {
   title: {
@@ -37,7 +37,7 @@ const Movie = sequelize.define('Movie', {
     allowNull: false,
     defaultValue: false, // Por defecto, la película no es para adultos
     validate: {
-      isIn: [[true, false]], // 
+      isIn: [[true, false]], // Para este caso podmos usar un booleano
     },
   },
  
