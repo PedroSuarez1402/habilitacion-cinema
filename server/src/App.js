@@ -1,20 +1,22 @@
 import express from 'express';
-import { connectDB } from './db';
-import movieRoutes from './routes/movieRoutes';
-import horarioRoutes from './routes/horarioRoutes';
+import cors from 'cors';
+import { connectDb } from './db.js';
 
+import movieRoutes from './routes/movieRoutes.js';
+import roomRoutes from './routes/roomRoutes.js';
+import scheduleRoutes from './routes/scheduleRoutes.js';
+
+const PORT = process.env.PORT || 5000
 const app = express();
-
-connectDB(); // Conectar a la base de datos al iniciar la aplicación
-
 app.use(express.json());
+app.use(cors());
 
-// Rutas para películas y horarios
-app.use('/api', movieRoutes);
-app.use('/api', horarioRoutes);
-// Otras rutas y configuraciones
+app.use('/movies', movieRoutes);
+app.use('/rooms', roomRoutes);
+app.use('/calendario', scheduleRoutes);
 
-const PORT = process.env.PORT || 3000;
+connectDb();
+
 app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
+    console.log(`Server listening on port ${PORT}`);
+})
