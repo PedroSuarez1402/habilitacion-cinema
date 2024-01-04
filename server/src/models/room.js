@@ -9,7 +9,7 @@ const roomSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    size: {
+    capacity: {
         type: String,
         required: true
     },

@@ -31,7 +31,7 @@ const createRoom = async (req, res) => {
     const room = new Room({
         name: roomData.name,
         tipo: roomData.tipo,
-        size: roomData.size
+        capacity: roomData.capacity
     });
     try {
         await room.save();

@@ -1,5 +1,13 @@
 import Movie from "../models/movie.js";
 
+const getMovies = async (req, res) => {
+    try {
+        const movies = await Movie.find();
+        res.status(200).json(movies);
+    } catch (error) {
+        res.status(500).json({error: error.message});
+    }
+};
 const getMovie = async (req, res) =>{
     const {id} = req.params;
 
@@ -11,14 +19,6 @@ const getMovie = async (req, res) =>{
         return res.status(404).json({message: 'Pelicula no encontrada'})
     } catch (error) {
         return res.status(400).json({message:error.message})
-    }
-}
-const getMovies = async (req, res) => {
-    try {
-        const movies = await Movie.find();
-        res.status(200).json(movies);
-    } catch (error) {
-        res.status(500).json({message: error.message});
     }
 };
 const createMovie = async (req, res) => {

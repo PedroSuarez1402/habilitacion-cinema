@@ -6,7 +6,7 @@ const NavBar = () => {
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <Link className="navbar-brand" to="/">
-                Cine Junior
+                CinePolis JS
             </Link>
             <div className="collapse navbar-collapse" id="navbarNav">
                 <ul className="navbar-nav">
